@@ -1,0 +1,23 @@
+{
+  "name": "price-server",
+  "version": "1.0.0",
+  "description": "nodejs server for price project",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "price"
+  ],
+  "author": "toothedcat",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "eslint": "^4.8.0",
+    "express": "^4.16.1",
+    "log4js": "^2.3.4",
+    "mysql": "^2.15.0"
+  }
+}
