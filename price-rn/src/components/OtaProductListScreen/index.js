@@ -1,6 +1,7 @@
+import React from 'react';
 import {View,Text} from 'react-native';
 
-const OtaProductList =  () => {
+const OtaProductListScreen =  () => {
     return (
         <View>
             <Text>搜索结果页</Text>
@@ -8,4 +9,4 @@ const OtaProductList =  () => {
     );
 };
 
-export default OtaProductList;
+export default OtaProductListScreen;
