@@ -1,13 +1,13 @@
 import { StackNavigator } from 'react-navigation';
 
-import SearchScreen from '../components/SearchScreen';
-import DepartureScreen from '../components/DepartureScreen';
-import DestinationScreen from '../components/DestinationScreen';
-import CalendarScreen from '../components/CalendarScreen';
-import OtaProductListScreen from '../components/OtaProductListScreen';
+import SearchScreen from '../components/app/SearchScreen';
+import DepartureScreen from '../components/app/DepartureScreen';
+import DestinationScreen from '../components/app/DestinationScreen';
+import CalendarScreen from '../components/app/CalendarScreen';
+import OtaProductListScreen from '../components/app/OtaProductListScreen';
 
 const RootNavigatorConfig = {
-    headerMode:"float"
+    headerMode:'float'
 };
 
 const RootNavigator = StackNavigator({
