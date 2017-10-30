@@ -2,24 +2,33 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     calendar:{
+        
     },
     weekdays:{
         flexDirection:'row',
-        backgroundColor:'#00ffff'
+        backgroundColor:'#CCC'
     },
-    weekdaysItem:{
+    weekdayItem:{
         flex:1,
         textAlign:'center'
     },
     month:{
         alignItems:'center'
     },
-    days:{
+    dateTable:{
+        paddingTop:10
     },
-    daysRow:{
-
+    dateRow:{
+        flexDirection:'row'
     },
-    daysCell:{
-        
+    dateCell:{
+        flex:1,
+        borderRadius:4,
+        height:40,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    selectedCell:{
+        backgroundColor:'#0088FF'
     }
 });
