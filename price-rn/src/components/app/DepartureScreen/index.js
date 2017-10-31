@@ -1,11 +1,11 @@
 import React from 'react';
 import {View,Text} from 'react-native';
 
+import AreaSelect from '../../common/AreaSelect';
+
 const DepartureScreen =  () => {
     return (
-        <View>
-            <Text>出发地选择</Text>
-        </View>
+        <AreaSelect />
     );
 };
 
