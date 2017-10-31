@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { WhiteSpace, WingBlank, Button } from 'antd-mobile';
 import FontIcon from '../../common/FontIcon';
 
@@ -35,6 +35,9 @@ class Search extends React.Component {
                     <WhiteSpace size="lg"></WhiteSpace>
                     <Button onClick={() => { this.searchClick() }}>查询</Button>
                     <FontIcon font="&#xe698;" />
+                    <TouchableOpacity onPress={() => {console.log('press');}}>
+                        <Text>Button</Text>
+                    </TouchableOpacity>
                 </WingBlank>
             </View>
         );

@@ -15,7 +15,7 @@ const RootNavigator = StackNavigator({
         screen: SearchScreen // 搜索页面
     },
     CalendarScreen:{
-        screen:CalendarScreen
+        screen:CalendarScreen // 日期选择页面
     },
     DepartureScreen: {
         screen: DepartureScreen // 出发地选择页面

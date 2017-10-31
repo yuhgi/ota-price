@@ -13,7 +13,8 @@ export default StyleSheet.create({
         textAlign:'center'
     },
     month:{
-        alignItems:'center'
+        flexDirection:'row',
+        justifyContent:'center'
     },
     dateTable:{
         paddingTop:10

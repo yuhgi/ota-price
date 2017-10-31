@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableHighlight, TouchableOpacity } from 'react-native';
+import FontIcon from '../FontIcon';
 import PropTypes from 'prop-types';
+import { pad, getPrevMonth, getNextMonth } from '../../../utils/dateUtil'
 import CalendarStyle from './style';
 
 const Weekdays = ['日', '一', '二', '三', '四', '五', '六'];
@@ -48,7 +50,7 @@ function getDatesList(year, month) {
         });
     }
 
-    for (let i = startDate, end = daysInMonth[month - 1]; i < end; i++) {
+    for (let i = startDate, end = daysInMonth[month - 1]; i <= end; i++) {
         allDates.push({
             current: true,
             day: (startDay + i - startDate + 7) % 7,
@@ -79,8 +81,6 @@ function getDatesList(year, month) {
     return results;
 }
 
-
-
 class Calendar extends Component {
     constructor(props) {
         super(props);
@@ -88,26 +88,64 @@ class Calendar extends Component {
         this.state = {
             year: this.props.year || date.getFullYear(),
             month: this.props.month || date.getMonth() + 1,
-            date: this.props.date || date.getDate()
+            date: this.props.date || date.getDate(),
+            barYear: this.props.year || date.getFullYear(),
+            barMonth: this.props.month || date.getMonth() + 1,
         };
     }
-    renderCell(weekDates) {
+    _onPrevPress() {
+        let prev = getPrevMonth(this.state.barYear, this.state.barMonth);
+        if (!prev) { return; }
+        this.setState({
+            barYear: prev.year,
+            barMonth: prev.month
+        });
+    }
+    _onNextPress() {
+        let next = getNextMonth(this.state.barYear, this.state.barMonth);
+        if (!next) { return; }
+        this.setState({
+            barYear: next.year,
+            barMonth: next.month
+        });
+    }
+    _onCellPress(year, month, date) {
+        this.setState({
+            year: year,
+            month: month,
+            date: date
+        });
+        this.onSelect && this.onSelect(year, month, date);
+    }
+    _renderCell(weekDates) {
+        let { year, month, date, barYear, barMonth } = this.state;
         return weekDates.map((item, index) => {
             let dateStyle = [CalendarStyle.dateCell];
-            if(item.current && this.state.date === item.date){
+            if (year === barYear && month === barMonth && date === item.date && item.current) {
                 dateStyle.push(CalendarStyle.selectedCell);
             }
-            return (
-                <View style={dateStyle} key={index}>
+            return item.current?(
+                <TouchableOpacity style={dateStyle} key={index} 
+                    onPress={this._onCellPress.bind(this, barYear, barMonth, item.date)}
+                >
+                    <View>
+                        <Text>
+                            {item.date}
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+            ):(
+                <View style={dateStyle}>
                     <Text>
-                        {item.current ? item.date : ''}
+                        {''}
                     </Text>
                 </View>
             );
         });
     }
     render() {
-        const allDates = getDatesList(this.state.year, this.state.month);
+        const allDates = getDatesList(this.state.barYear, this.state.barMonth);
+
         return (
             <View>
                 <View style={CalendarStyle.weekdays}>
@@ -116,13 +154,25 @@ class Calendar extends Component {
                     })}
                 </View>
                 <View style={CalendarStyle.month}>
-                    <Text>{this.state.year}年{this.state.month}月</Text>
+                    <TouchableOpacity onPress={this._onPrevPress.bind(this)}>
+                        <View>
+                            <FontIcon font="&#xe8bb;" />
+                        </View>
+                    </TouchableOpacity>
+                    <View>
+                        <Text>
+                            {pad(this.state.barYear, 4)}年{pad(this.state.barMonth, 2)}月
+                        </Text>
+                    </View>
+                    <TouchableOpacity onPress={this._onNextPress.bind(this)}>
+                        <View><FontIcon font="&#xe8ad;" /></View>
+                    </TouchableOpacity>
                 </View>
                 <View style={CalendarStyle.dateTable}>
                     {allDates.map((weekDates, index) => {
                         return (
                             <View style={CalendarStyle.dateRow} key={index}>
-                                {this.renderCell(weekDates)}
+                                {this._renderCell(weekDates)}
                             </View>
                         );
                     })}
