@@ -1,11 +1,12 @@
 import React from 'react';
 import {View,Text} from 'react-native';
 
+import AreaSelect from '../../common/AreaSelect';
+import areaData from '../DepartureScreen/area';
+
 const DestinationScreen =  () => {
     return (
-        <View>
-            <Text>目的地选择</Text>
-        </View>
+        <AreaSelect areaData={areaData} />
     );
 };
 
