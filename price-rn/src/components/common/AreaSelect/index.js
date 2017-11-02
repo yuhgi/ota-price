@@ -16,12 +16,10 @@ class AreaSelect extends React.Component{
         this.state = {position:{}};
     }
     _onTypePress(type){
-        console.log(type);
-        
         if(!this.state.position[type]){
             return;
         }
-        console.log(this.state.position[type])
+
         this.refs.scrollView.scrollTo({
             x:0,
             y:this.state.position[type].y,
@@ -36,7 +34,6 @@ class AreaSelect extends React.Component{
             x:e.nativeEvent.layout.x,
             y:e.nativeEvent.layout.y
         };
-        console.log(type,this.state.position[type]);
     }
     _renderTypes(){
         return (
