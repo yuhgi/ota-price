@@ -7,25 +7,25 @@ import CalendarScreen from '../components/app/CalendarScreen';
 import OtaProductListScreen from '../components/app/OtaProductListScreen';
 
 const RootNavigatorConfig = {
-    headerMode:'float'
+    headerMode: 'float'
 };
 
 const RootNavigator = StackNavigator({
     Home: {
         screen: SearchScreen // 搜索页面
     },
-    CalendarScreen:{
-        screen:CalendarScreen // 日期选择页面
+    CalendarScreen: {
+        screen: CalendarScreen // 日期选择页面
     },
     DepartureScreen: {
         screen: DepartureScreen // 出发地选择页面
     },
-    DestinationScreen:{
-        screen:DestinationScreen // 目的地选择页面
+    DestinationScreen: {
+        screen: DestinationScreen // 目的地选择页面
     },
-    OtaProductListScreen:{
-        screen:OtaProductListScreen // 旅游产品列表
+    OtaProductListScreen: {
+        screen: OtaProductListScreen // 旅游产品列表
     }
-},RootNavigatorConfig);
+}, RootNavigatorConfig);
 
 export default RootNavigator;
