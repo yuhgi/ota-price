@@ -6,7 +6,7 @@ export default class DepartureDateScreen extends React.Component{
     render(){
         return (
             <View>
-                <DateSelect />
+                <DateSelect navigation={this.props.navigation} />
             </View>
         );
     }
