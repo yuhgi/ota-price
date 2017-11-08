@@ -1,11 +1,9 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import SearchScreen from '../../components/SearchScreen';
-import DepartureCityScreen from '../../components/DepartureCityScreen';
-import DepartureDateScreen from '../../components/DepartureDateScreen';
-import DestinationCityScreen from '../../components/DestinationCityScreen';
-import OtaProductListScreen from '../../components/OtaProductListScreen';
+import Search from '../../components/Search';
+import OtaGroupList from '../../components/OtaGroupList';
+import OtaProductList from '../../components/OtaProductList';
 
 const RootNavigatorConfig = {
     headerMode: 'float'
@@ -13,18 +11,12 @@ const RootNavigatorConfig = {
 
 export default StackNavigator({
     Home: {
-        screen: SearchScreen // 搜索页面
+        screen: Search // 搜索页面
     },
     OtaProductListScreen: {
-        screen: OtaProductListScreen // 旅游产品列表
+        screen: OtaProductList // 旅游产品列表
     },
-    DepartureCityScreen:{
-        screen: DepartureCityScreen
-    },
-    DestinationCityScreen:{
-        screen:DestinationCityScreen
-    },
-    DepartureDateScreen:{
-        screen:DepartureDateScreen
+    OtaGroupListScreen:{
+        screen:OtaGroupList // 产品分类信息
     }
 }, RootNavigatorConfig);

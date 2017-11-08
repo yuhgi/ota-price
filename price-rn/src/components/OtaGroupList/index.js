@@ -1,14 +1,14 @@
 import React from 'react';
 import {View,Text} from 'react-native';
 
-class OtaGroupList extends React.Component{
+class OtaGroupListScreen extends React.Component{
     render(){
         return (
             <View>
-                <Text>分类</Text>
+                <Text>分类列表</Text>
             </View>
         );
     }
 }
 
-export default OtaGroupList;
+export default OtaGroupListScreen;

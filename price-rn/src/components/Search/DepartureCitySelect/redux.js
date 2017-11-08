@@ -1,19 +1,19 @@
-export const DESTINATION_CITY_SELECT = 'DEPARTURE_SELECT';  // 出发地选择
+export const DEPARTURE_CITY_SELECT = 'DEPARTURE_CITY_SELECT';  // 出发地选择
 
-export const destinationCitySelect = (areaCode,name) => {
+export const departureCitySelect = (areaCode,name) => {
     return {
-        type:DESTINATION_CITY_SELECT,
+        type:DEPARTURE_CITY_SELECT,
         areaCode:areaCode,
         name:name
     };
 };
 
 export default function (state = {
-    areaCode: '310000',
-    name: '上海'
+    areaCode: '320100',
+    name: '南京'
 }, action) {
     switch (action.type) {
-        case DESTINATION_CITY_SELECT:
+        case DEPARTURE_CITY_SELECT:
             return {
                 areaCode: action.areaCode,
                 name: action.name
