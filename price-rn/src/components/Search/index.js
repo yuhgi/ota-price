@@ -3,7 +3,7 @@ import Search from './component';
 
 const mapStateToProps = (state) => {
     return {
-        departureCitySelectShow:state.search.departureCityShow,
+        departureCitySelectShow:state.search.departureCitySelectShow,
         destinationCitySelectShow:state.search.destinationCitySelectShow
     };
 };

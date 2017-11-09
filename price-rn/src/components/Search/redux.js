@@ -36,7 +36,7 @@ export const actionCreators = {
 };
 
 
-const departureCitySelectHide = (state=false,action) => {
+const departureCitySelectShow = (state=false,action) => {
     switch(action.type){
         case actionTypes.DEPARTURE_CITY_SELECT_SHOW:
             return true;
@@ -46,7 +46,7 @@ const departureCitySelectHide = (state=false,action) => {
     }
 };
 
-const departureCitySelectShow = (state=false,action) => {
+const destinationCitySelectShow = (state=false,action) => {
     switch(action.type){
         case actionTypes.DESTINATION_CITY_SELECT_SHOW:
             return true;
@@ -61,5 +61,5 @@ export default combineReducers({
     destinationCity,
     hotCities,
     departureCitySelectShow,
-    departureCitySelectHide
+    destinationCitySelectShow
 });

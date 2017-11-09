@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import search from '../components/DepartureCityScreen/redux';
+import search from '../components/Search/redux';
 import route from '../router/RootRouter/redux';
 
 const appReducer = combineReducers({

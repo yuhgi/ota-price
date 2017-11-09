@@ -4,7 +4,7 @@ import CitySelect from '../DepartureCitySelect/component';
 
 const mapStateToProps = (state) => {
     return {
-        currentAreaCode:state.departureCity.areaCode
+        currentAreaCode:state.search.departureCity.areaCode
     };
 };
 

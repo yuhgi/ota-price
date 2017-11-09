@@ -7,7 +7,6 @@ import areaData from './area';
 class CitySelect extends React.Component{
     _onSelect(areaCode,name){
         this.props.onSelect && this.props.onSelect(areaCode,name);
-        this.props.navigation.goBack();
     }
     render(){
         return (

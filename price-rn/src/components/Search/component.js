@@ -11,13 +11,14 @@ class SearchScreen extends React.Component{
     render(){
         return (
             <View style={SearchScreenStyle.container}>
+                {
+                    this.props.departureCitySelectShow?<DepartureCitySelect />:null
+                }
                 <SearchCriteria {...this.props} />
                 <HotCity {...this.props} />
+                
                 {
-                    this.props.departureCitySelectShow?<DepartureCitySelect {...this.props} />:null
-                }
-                {
-                    this.props.destinationCitySelectShow?<DestinationCitySelect {...this.props} />:null
+                    this.props.destinationCitySelectShow?<DestinationCitySelect />:null
                 }
             </View>    
         );
