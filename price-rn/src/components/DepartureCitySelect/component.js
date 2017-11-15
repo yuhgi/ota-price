@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AreaSelect from '../../../common/AreaSelect';
+import AreaSelect from '../../common/AreaSelect';
 import areaData from './area';
 
 class CitySelect extends React.Component{

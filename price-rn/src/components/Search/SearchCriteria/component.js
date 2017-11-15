@@ -4,6 +4,16 @@ import PropTypes from 'prop-types';
 import SearchCriteriaStyle from './style';
 
 class SearchCriteria extends React.Component {
+    static navigationOptions = ({navigation}) => {
+        const header = (
+            <View>
+                <Text>自由行</Text>
+            </View>
+        );
+        return {
+            header:header
+        };
+    };
     _onDeparturePress() {
         this.props.onDeparturePress && this.props.onDeparturePress();
     }

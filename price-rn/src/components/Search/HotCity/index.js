@@ -1,13 +1,10 @@
 import HotCity from './component';
 import {connect} from 'react-redux';
-import {destinationCitySelect} from '../DestinationCitySelect/redux';
-
-import hotCities from './hot';
+import {destinationCitySelect} from '../../DestinationCitySelect/redux';
 
 const mapStateToProps = (state) => {
     return {
-        // cities:[...state.hotCities]
-        cities:[...hotCities]
+        cities:[...state.search.hotCities]
     };
 };
 

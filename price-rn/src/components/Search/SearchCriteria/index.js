@@ -1,15 +1,15 @@
-
+import {NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import SearchCriteria from './component';
-import {actionCreators} from '../redux';
+import {ROUTES} from '../../../router/AppNavigator/navigator';
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onDeparturePress:() => {
-            dispatch(actionCreators.departureCitySelectShow());
+            dispatch(NavigationActions.navigate({routeName:ROUTES.DepartureCitySelect}));
         },
         onDestinationPress:() => {
-            dispatch(actionCreators.destinationCitySelectShow());
+            dispatch(NavigationActions.navigate({routeName:ROUTES.DestinationCitySelect}));
         }
     };
 };
