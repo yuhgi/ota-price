@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        departureCity:state.search.departureCity,
-        destinationCity:state.search.destinationCity
+        departureCity:state.search.departureInfo.departureCity,
+        destinationCity:state.search.destinationInfo.destinationCity
     };
 };
 

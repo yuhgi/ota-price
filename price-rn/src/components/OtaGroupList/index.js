@@ -1,14 +1,4 @@
-import React from 'react';
-import {View,Text} from 'react-native';
+import {connect} from 'react-redux';
+import OtaGroupList from './component';
 
-class OtaGroupListScreen extends React.Component{
-    render(){
-        return (
-            <View>
-                <Text>分类列表</Text>
-            </View>
-        );
-    }
-}
-
-export default OtaGroupListScreen;
+export default connect()(OtaGroupList);

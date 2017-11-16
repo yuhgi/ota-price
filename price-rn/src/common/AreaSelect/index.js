@@ -67,17 +67,17 @@ class AreaSelect extends React.Component{
         );
     }
     _renderArea(){
-        let areaData = this.props.areaData;
-        let types = Object.keys(areaData);
+        let areaList = this.props.areaList;
+        let types = Object.keys(areaList);
         
         return (
             <ScrollView ref="scrollView">
                 {
                     types.map((type,index) => {
-                        return type === 'hot'?this._renderHot(areaData[type]):(
+                        return type === 'hot'?this._renderHot(areaList[type]):(
                             <View key={index} onLayout={this._onTypeLayout.bind(this,type)}>
                                 <Text key={index} style={AreaSelectStyle.cityHeader}>{type}</Text>
-                                {areaData[type].map((city,index) => {
+                                {areaList[type].map((city,index) => {
                                     return (
                                         <TouchableOpacity key={index} onPress={this._onCityPress.bind(this,city.areaCode,city.name)}>
                                             <View style={AreaSelectStyle.cityItem}>
@@ -106,7 +106,7 @@ class AreaSelect extends React.Component{
 AreaSelect.propTypes = {
     onSelect:PropTypes.func,
     currentAreaCode:PropTypes.string,
-    areaData:PropTypes.object
+    areaList:PropTypes.object
 };
 
 export default AreaSelect;

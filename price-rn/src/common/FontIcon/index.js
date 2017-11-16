@@ -11,7 +11,6 @@ class FontIcon extends Component{
         return (
             <Text
                 style={[FontIconStyle.icon,this.props.style]}
-                onPress={this.props.onPress}
             >
                 {this.props.font}
             </Text>
@@ -20,8 +19,7 @@ class FontIcon extends Component{
 }
 
 FontIcon.propTypes = {
-    font:PropTypes.string.isRequired,
-    onPress:PropTypes.func
+    font:PropTypes.string.isRequired
 };
 
 export default FontIcon;

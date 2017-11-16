@@ -1,5 +1,7 @@
 import HotCity from './component';
 import {connect} from 'react-redux';
+import {NavigationActions} from 'react-navigation';
+import {ROUTES} from '../../../router/AppNavigator/navigator';
 import {destinationCitySelect} from '../../DestinationCitySelect/redux';
 
 const mapStateToProps = (state) => {
@@ -10,8 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSelect:(areaCode,name) => {
+        onCityPress:(areaCode,name) => {
             dispatch(destinationCitySelect(areaCode,name));
+            dispatch(NavigationActions.navigate({routeName:ROUTES.OtaGroupList}));
         }
     };
 };
