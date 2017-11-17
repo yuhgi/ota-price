@@ -14,7 +14,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSelect:(areaCode,name) => {
-            dispatch(NavigationActions.navigate({routeName:ROUTES.OtaGroupList}));
+            // 使用reset，将DestinationCitySelect这一层去掉
+            dispatch(NavigationActions.reset({
+                index:1,
+                actions:[
+                    NavigationActions.navigate({routeName:ROUTES.Home}),
+                    NavigationActions.navigate({routeName:ROUTES.OtaGroupList})
+                ]
+            }));
             dispatch(destinationCitySelect(areaCode,name));
         }
     };
