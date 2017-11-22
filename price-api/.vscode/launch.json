@@ -9,8 +9,12 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceRoot}\\app.js",
-            "outFiles": [],
+            "program": "${workspaceRoot}/src/app.js",
+            "sourceMaps":true,
+            "preLaunchTask": "build",   
+            "outFiles": [
+                "${workspaceRoot}/build/**"
+            ],
             "env":{
                 "NODE_ENV":"development"
             }
@@ -20,8 +24,7 @@
             "request": "attach",
             "name": "附加到端口",
             "address": "localhost",
-            "port": 5858,
-            "outFiles": []
+            "port": 5858
         }
     ]
 }

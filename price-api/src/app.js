@@ -1,7 +1,7 @@
-const http = require('http');
-const express = require('express');
-const serverConf = require('./config/server');
-const router = require('./router');
+import http from 'http';
+import express from 'express';
+import serverConf from './config/server';
+import router from './router';
 
 const app = express();
 app.use(router);

@@ -1,4 +1,4 @@
-{
+export default {
     "appenders":[
         {
             "type":"console",

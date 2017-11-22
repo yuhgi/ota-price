@@ -4,7 +4,8 @@
   "description": "nodejs server for price project",
   "main": "app.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "gulp build"
   },
   "keywords": [
     "node",
@@ -15,9 +16,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "eslint": "^4.8.0",
     "express": "^4.16.1",
     "log4js": "^2.3.4",
     "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-watch": "^4.3.11",
+    "rimraf": "^2.6.2"
   }
 }
