@@ -1,13 +1,23 @@
 
 
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import {createLogger} from 'redux-logger';
 import AppNavigator from './router/AppNavigator';
 
 import appReducer from './reducers';
 
-const store = createStore(appReducer);
+const logger = createLogger();
+
+const store = createStore(
+    appReducer,
+    applyMiddleware(
+        thunk,
+        logger
+    )
+);
 
 export default class App extends React.Component{
     render(){
